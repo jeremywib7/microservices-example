@@ -1,0 +1,6 @@
+/.idea/
+
+# Project exclude paths
+/currency-conversion-service/target/
+/currency-exchange-service/target/
+/naming-server/target/
