@@ -14,4 +14,9 @@ public interface CurrencyExchangeProxy {
 			@PathVariable("from") String from,
 			@PathVariable("to") String to);
 
+	@GetMapping("/currency-exchange-feign/from/{from}/to/{to}")
+	public CurrencyConversion retrieveExchangeValueWithFeign(
+			@PathVariable("from") String from,
+			@PathVariable("to") String to);
+
 }

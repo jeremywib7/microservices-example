@@ -8,6 +8,9 @@ spring:
   h2:
     console:
       enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0
 
 server:
   port: 8000
@@ -32,8 +35,10 @@ resilience4j:
         max-concurrent-calls: 10
       sample-api:
         max-concurrent-calls: 10
-  ratelimiter:
+  rate-limiter:
     instances:
       default:
         limit-for-period: 2
         limit-refresh-period: 10s
+
+# docker run -p 9411:9411 openzipkin/zipkin:2.23

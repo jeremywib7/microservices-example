@@ -5,6 +5,9 @@ spring:
     config:
       import-check:
         enabled: false
+  sleuth:
+    sampler:
+      probability: 1.0
 #    gateway:
 #      discovery:
 #        locator:
