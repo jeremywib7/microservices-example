@@ -3,6 +3,7 @@ package com.in28minutes.microservices.currencyconversionservice;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
+@Slf4j
 public class CurrencyConversionController {
 	
 	@Autowired
@@ -47,6 +49,8 @@ public class CurrencyConversionController {
 			@PathVariable String to,
 			@PathVariable BigDecimal quantity
 			) {
+
+		log.info("ini dijalankan");
 				
 		CurrencyConversion currencyConversion = proxy.retrieveExchangeValue(from, to);
 		
